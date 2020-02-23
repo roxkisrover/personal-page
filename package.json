@@ -1,0 +1,51 @@
+{
+  "name": "personal-page",
+  "version": "1.0.0",
+  "homepage": "https://roxkisrover.ru",
+  "private": true,
+  "scripts": {
+    "start": "inferno-scripts start",
+    "build": "inferno-scripts build",
+    "lint": "npm-run-all --parallel --continue-on-error lint-scripts lint-styles",
+    "lint-scripts": "eslint \"src/**/*.js\"",
+    "lint-styles": "stylelint \"src/**/*.scss\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.scss": "stylelint"
+  },
+  "browserslist": {
+    "production": [
+      ">0.25%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "inferno": "^7.4.0",
+    "inferno-scripts": "7.0.4",
+    "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^13.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0"
+  }
+}
