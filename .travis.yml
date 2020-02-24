@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "10.16"
+branches:
+  only:
+    - master
+cache: yarn
+script:
+  - yarn
+  - yarn build
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token: $FIREBASE_TOKEN
+  edge: true

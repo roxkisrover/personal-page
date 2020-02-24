@@ -3,21 +3,16 @@
   "version": "1.0.0",
   "homepage": "https://roxkisrover.ru",
   "private": true,
+  "engines": {
+    "npm": ">=5",
+    "node": ">=10.16.0"
+  },
   "scripts": {
     "start": "inferno-scripts start",
     "build": "inferno-scripts build",
     "lint": "npm-run-all --parallel --continue-on-error lint-scripts lint-styles",
     "lint-scripts": "eslint \"src/**/*.js\"",
     "lint-styles": "stylelint \"src/**/*.scss\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": "eslint",
-    "*.scss": "stylelint"
   },
   "browserslist": {
     "production": [
@@ -31,6 +26,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.scss": "stylelint"
   },
   "dependencies": {
     "inferno": "^7.4.0",
