@@ -5,7 +5,7 @@
   "private": true,
   "engines": {
     "npm": ">=5",
-    "node": ">=10.16.0"
+    "node": ">=10.18.0"
   },
   "scripts": {
     "start": "inferno-scripts start",
