@@ -40,7 +40,7 @@
     "firebase": "^7.14.2",
     "inferno": "^7.4.2",
     "inferno-scripts": "7.0.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.0",
     "prop-types": "^15.7.2",
     "webfontloader": "^1.6.28"
   },
