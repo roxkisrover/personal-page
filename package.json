@@ -44,8 +44,8 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
     "npm-run-all": "^4.1.5",
     "stylelint": "^13.3.3",
     "stylelint-config-rational-order": "^0.1.2",
