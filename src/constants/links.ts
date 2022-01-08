@@ -3,5 +3,5 @@ export default {
     github: 'https://github.com/roxkisrover',
     gitlab: 'https://gitlab.com/roxkisrover',
     linkedin: 'https://www.linkedin.com/in/roxkisrover',
-    telegram: 'https://tele.click/roxkisrover',
+    telegram: 'https://t.me/AntonNikolaenko',
 };

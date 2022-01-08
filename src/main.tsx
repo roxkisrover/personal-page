@@ -1,6 +1,7 @@
-import { render } from 'inferno';
+import { render } from 'preact';
 import WebFont from 'webfontloader';
-import App from './App';
+
+import App from './app';
 import './index.scss';
 
 WebFont.load({
@@ -10,4 +11,4 @@ WebFont.load({
     classes: false,
 });
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('app')!)

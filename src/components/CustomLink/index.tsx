@@ -1,7 +1,14 @@
-import { string, node, bool } from 'prop-types';
+import { ComponentChildren } from "preact";
+
 import './styles.scss';
 
-const CustomLink = ({ to, children, isLastInSentence = false }) => (
+interface ICustomLinkProps {
+    to: string;
+    children: ComponentChildren;
+    isLastInSentence?: boolean;
+}
+
+const CustomLink = ({ to, children, isLastInSentence = false }: ICustomLinkProps) => (
     <a
         className={`custom-link ${isLastInSentence ? 'custom-link--last' : ''}`.trim()}
         href={to}
@@ -11,11 +18,5 @@ const CustomLink = ({ to, children, isLastInSentence = false }) => (
         {children}
     </a>
 );
-
-CustomLink.propTypes = {
-    to: string.isRequired,
-    children: node.isRequired,
-    isLastInSentence: bool,
-};
 
 export default CustomLink;
