@@ -14,14 +14,15 @@ const Container = ({ date, children }: IContainerProps) => {
     return (
         <>
             <div className="top-line" />
-
             <header className="timestamp">
                 {`Сегодня, в ${time}`}
             </header>
 
-            <div className="container">
-                <div className="avatar" />
-                {children}
+            <div className="chat-wrapper">
+                <div className="container">
+                    <div className="avatar" />
+                    {children}
+                </div>
             </div>
 
             <h1 className="aside">frontend</h1>
