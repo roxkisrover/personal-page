@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "roxkisrover-8d4be",
-    "public": "build",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
