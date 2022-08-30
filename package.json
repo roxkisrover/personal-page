@@ -17,6 +17,6 @@
     "@types/webfontloader": "^1.6.34",
     "sass": "^1.47.0",
     "typescript": "^4.5.4",
-    "vite": "^2.7.10"
+    "vite": "^2.9.13"
   }
 }
