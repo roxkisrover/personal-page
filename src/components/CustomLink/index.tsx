@@ -5,12 +5,12 @@ import './styles.scss';
 interface ICustomLinkProps {
     to: string;
     children: ComponentChildren;
-    isLastInSentence?: boolean;
+    isLast?: boolean;
 }
 
-const CustomLink = ({ to, children, isLastInSentence = false }: ICustomLinkProps) => (
+const CustomLink = ({ to, children, isLast = false }: ICustomLinkProps) => (
     <a
-        className={`custom-link ${isLastInSentence ? 'custom-link--last' : ''}`.trim()}
+        className={`custom-link ${isLast ? 'custom-link--last' : ''}`.trim()}
         href={to}
         target="_blank"
         rel="noopener noreferrer"

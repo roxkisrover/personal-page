@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'preact/hooks';
+import { useState, useEffect } from 'preact/hooks';
 
 import Container from './components/Container';
 import Message from './components/Message';
@@ -6,7 +6,6 @@ import time from './constants/time';
 import getMessages, { IMessage } from './helpers/getMessages';
 
 const CURRENT_DATE = new Date();
-
 const MESSAGES_LIST = getMessages(CURRENT_DATE);
 
 const App = () => {
