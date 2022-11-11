@@ -17,15 +17,14 @@ export interface IMessage {
 const getMessages = (currentDate: Date): IMessage[] => [
     {
         id: 1,
-        render: () => 'Привет! Меня зовут Антон Николаенко.',
+        render: () => 'Привет! Меня зовут Антон.',
     },
     {
         id: 2,
         render: () => (
             <>
-                В команде<CustomLink to={links.unit6}>UNIT6</CustomLink>я занимаюсь созданием клиентской части
-                российских и международных веб-приложений на React и сопутствующих технологиях.
-                Тематика приложений — FinTech.
+                В команде<CustomLink to={links.unit6}>UNIT6</CustomLink>я занимаюсь созданием frontend части
+                российских и международных FinTech проектов на React и сопутствующих технологиях.
             </>
         ),
     },
@@ -33,21 +32,18 @@ const getMessages = (currentDate: Date): IMessage[] => [
         id: 3,
         render: () => (
             <>
-                С результатами работы можно ознакомиться на
-                <CustomLink
-                    to={links.github}
-                    isLastInSentence
-                >
+                С открытыми примерами кода можно ознакомиться на
+                <CustomLink to={links.github}>
                     <BrandLogo
                         image={logoGitHub}
                         alt="GitHub"
                     />
                     GitHub
                 </CustomLink>
-                {' '}и
+                и
                 <CustomLink
                     to={links.gitlab}
-                    isLastInSentence
+                    isLast
                 >
                     <BrandLogo
                         image={logoGitLab}
@@ -74,7 +70,7 @@ const getMessages = (currentDate: Date): IMessage[] => [
                 или
                 <CustomLink
                     to={links.telegram}
-                    isLastInSentence
+                    isLast
                 >
                     <BrandLogo
                         image={logoTelegram}
@@ -88,10 +84,6 @@ const getMessages = (currentDate: Date): IMessage[] => [
     },
     {
         id: 5,
-        render: () => <>А ещё мама говорит, что я классный.</>,
-    },
-    {
-        id: 6,
         render: () => getLastMessageText(currentDate),
     },
 ];
