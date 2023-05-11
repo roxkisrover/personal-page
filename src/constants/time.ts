@@ -1,4 +1,4 @@
 export default {
-    basicDelay: 500,
-    typingDuration: 1500,
+  basicDelay: 500,
+  typingDuration: 1500,
 };

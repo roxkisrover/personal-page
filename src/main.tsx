@@ -5,10 +5,10 @@ import App from './app';
 import './index.scss';
 
 WebFont.load({
-    google: {
-        families: ['Ubuntu:400,500:latin,cyrillic'],
-    },
-    classes: false,
+  google: {
+    families: ['Ubuntu:400,500:latin,cyrillic'],
+  },
+  classes: false,
 });
 
-render(<App />, document.getElementById('app')!)
+render(<App />, document.getElementById('app') as HTMLElement);
