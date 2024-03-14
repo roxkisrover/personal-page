@@ -26,9 +26,9 @@ export function Ticker() {
   const list = useMemo(() => new Array(10).fill(TECHNOLOGIES).flat(), []);
 
   return (
-    <div>
+    <div className={styles.ticker}>
       <div className={styles.wrapper}>
-        <ul className={styles.ticker}>
+        <ul className={styles.list}>
           {list.map((item, index) => (
             <li key={`${index}-${item}`} className={styles.item}>
               {item}

@@ -1,3 +1,5 @@
+@use "@/shared/styles/breakpoints";
+
 .divider {
   padding: 0;
   border: none;
@@ -12,12 +14,22 @@
 }
 
 .times {
-  font-size: 40px;
-  line-height: 1.65;
+  font-size: 36px;
+  line-height: 1;
   color: var(--color-electric-ultramarine);
+
+  @include breakpoints.media-query(medium) {
+    font-size: 40px;
+    line-height: 1.65;
+  }
 }
 
 .emoji {
   font-size: 30px;
-  line-height: 2.2;
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+
+  @include breakpoints.media-query(medium) {
+    line-height: 2.2;
+  }
 }
