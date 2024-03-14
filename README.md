@@ -1,5 +1,5 @@
 ## My Personal Page
 
-Built with [Vite](https://vitejs.dev), [Preact](https://preactjs.com), [TypeScript](https://www.typescriptlang.org/) and [Sass](https://sass-lang.com).
+Built with [React](https://react.dev), [TypeScript](https://www.typescriptlang.org/) and [SCSS](https://sass-lang.com).
 
 Deployed to [Firebase Hosting](https://firebase.google.com/products/hosting).
