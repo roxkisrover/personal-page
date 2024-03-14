@@ -7,12 +7,12 @@ function App() {
   const logoSprings = useSpring({
     from: { y: -100, opacity: 0 },
     to: { y: -15, opacity: 1 },
-    delay: 200,
+    delay: 150,
   });
   const nameSprings = useSpring({
     from: { y: 100, opacity: 0 },
     to: { y: 0, opacity: 1 },
-    delay: 200,
+    delay: 150,
   });
 
   return (
