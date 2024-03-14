@@ -18,12 +18,13 @@
   justify-content: space-between;
   height: 14px;
   width: 700px;
+  user-select: none;
 }
 
 .logo {
   display: block;
   height: 66px;
-  transform: translateY(-23%);
+  animation-timing-function: ease-in-out;
 }
 
 .times {
@@ -40,6 +41,7 @@
   background-image: linear-gradient(90deg, #3700ff, #ff0059);
   background-clip: text;
   color: transparent;
+  animation-timing-function: ease-in-out;
 
   @media (width >= 550px) {
     font-size: 50px;
