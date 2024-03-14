@@ -1,0 +1,75 @@
+@use "@/shared/styles/breakpoints";
+
+@keyframes sliding {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker {
+  margin-top: 20px;
+  width: 100%;
+
+  @include breakpoints.media-query(small) {
+    width: auto;
+  }
+
+  @include breakpoints.media-query(medium) {
+    margin-top: 0;
+  }
+}
+
+.wrapper {
+  position: relative;
+  padding-left: 100%;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  opacity: 0.5;
+  overflow: hidden;
+  transition: opacity 0.5s ease-out;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -1px;
+    width: 20px;
+    height: 100%;
+    background-image: linear-gradient(90deg, var(--color-white-smoke), transparent);
+    z-index: 1;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -1px;
+    width: 20px;
+    height: 100%;
+    background-image: linear-gradient(90deg, transparent, var(--color-white-smoke));
+    z-index: 1;
+  }
+
+  @include breakpoints.media-query(medium) {
+    max-width: 600px;
+  }
+}
+
+.list {
+  display: inline-block;
+  margin: 0;
+  padding: 0 100% 0 0;
+  list-style-type: none;
+  white-space: nowrap;
+  animation: 180s linear 1s infinite normal none running sliding;
+}
+
+.item {
+  display: inline-block;
+  margin: 0 0.5rem;
+}

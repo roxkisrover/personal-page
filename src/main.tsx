@@ -1,14 +1,13 @@
-import { render } from 'preact';
-import WebFont from 'webfontloader';
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-import App from './app';
-import './index.scss';
+import "./global.scss";
+import App from "@/app/App.tsx";
 
-WebFont.load({
-  google: {
-    families: ['Ubuntu:400,500:latin,cyrillic'],
-  },
-  classes: false,
-});
+const root = createRoot(document.getElementById("root")!);
 
-render(<App />, document.getElementById('app') as HTMLElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
