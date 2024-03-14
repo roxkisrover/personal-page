@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import styles from "./Divider.module.scss";
 
-const EMOJI_LIST = ["🚀", "⭐", "✨", "🤘", "🫶", "😎", "💾", "📡", "😉"] as const;
+const EMOJI_LIST = ["🚀", "⭐", "✨", "🤘", "🫶", "😎", "💾", "📡", "😉", "👉"] as const;
 
 export function Divider() {
   const [emoji, setEmoji] = useState<(typeof EMOJI_LIST)[number] | null>(null);
