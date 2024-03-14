@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import styles from "./Ticker.module.scss";
 
 const TECHNOLOGIES = [
@@ -21,11 +23,13 @@ const TECHNOLOGIES = [
 ] as const;
 
 export function Ticker() {
+  const list = useMemo(() => new Array(10).fill(TECHNOLOGIES).flat(), []);
+
   return (
     <div>
       <div className={styles.wrapper}>
         <ul className={styles.ticker}>
-          {TECHNOLOGIES.concat(TECHNOLOGIES).map((item, index) => (
+          {list.map((item, index) => (
             <li key={`${index}-${item}`} className={styles.item}>
               {item}
             </li>
