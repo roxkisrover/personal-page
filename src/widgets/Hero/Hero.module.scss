@@ -1,0 +1,40 @@
+$transition-params: all 200ms ease-out;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--color-white-smoke);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 700px;
+  width: 100%;
+  user-select: none;
+}
+
+.logo {
+  display: block;
+  height: 66px;
+  width: auto;
+  transition: $transition-params;
+}
+
+.name {
+  display: block;
+  margin: 0;
+  font-size: 50px;
+  line-height: 1.32;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-electric-ultramarine),
+    var(--color-flaming-hot-flamingoes)
+  );
+  background-clip: text;
+  transition: $transition-params;
+}
