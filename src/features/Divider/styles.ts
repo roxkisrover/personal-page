@@ -14,7 +14,7 @@ export const btn = css`
   -webkit-tap-highlight-color: transparent;
 
   @media screen and (width >= 760px) {
-    padding: 0 6px;
+    padding: 0;
   }
 `;
 
