@@ -1,7 +1,14 @@
 module.exports = {
-  extends: ["stylelint-config-standard-scss"],
+  extends: ["stylelint-config-standard"],
+  customSyntax: require("@linaria/postcss-linaria"),
   rules: {
-    "scss/double-slash-comment-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        ignorePseudoClasses: ["/^global$/"],
+      },
+    ],
     "value-keyword-case": [
       "lower",
       {

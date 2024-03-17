@@ -1,14 +1,14 @@
 import { Hero } from "@/widgets";
 import { Grid } from "@/features";
 
-import styles from "./App.module.scss";
+import * as styles from "./styles";
 
 function App() {
   return (
-    <div className={styles.container}>
+    <styles.Container>
       <Hero />
       <Grid />
-    </div>
+    </styles.Container>
   );
 }
 

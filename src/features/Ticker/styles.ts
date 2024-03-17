@@ -1,37 +1,26 @@
-@use "@/shared/styles/breakpoints";
+import { styled } from "@linaria/react";
 
-@keyframes sliding {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-.ticker {
+export const Wrapper = styled.div`
   margin-top: 20px;
   width: 100%;
 
-  @include breakpoints.media-query(small) {
+  @media screen and (width >= 550px) {
     width: auto;
   }
 
-  @include breakpoints.media-query(medium) {
+  @media screen and (width >= 760px) {
     margin-top: 0;
   }
-}
+`;
 
-.wrapper {
+export const Container = styled.div`
   position: relative;
   padding-left: 100%;
   max-width: 400px;
   width: 100%;
   border-radius: 8px;
-  opacity: 0.5;
+  color: var(--color-umbral-umber);
   overflow: hidden;
-  transition: opacity 0.5s ease-out;
 
   &::before {
     position: absolute;
@@ -55,21 +44,36 @@
     z-index: 1;
   }
 
-  @include breakpoints.media-query(medium) {
+  ::selection {
+    color: var(--color-white);
+    background-color: var(--color-grass);
+  }
+
+  @media screen and (width >= 760px) {
     max-width: 600px;
   }
-}
+`;
 
-.list {
+export const List = styled.ul`
   display: inline-block;
   margin: 0;
   padding: 0 100% 0 0;
   list-style-type: none;
   white-space: nowrap;
   animation: 180s linear 1s infinite normal none running sliding;
-}
 
-.item {
+  @keyframes sliding {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+`;
+
+export const ListItem = styled.li`
   display: inline-block;
   margin: 0 0.5rem;
-}
+`;

@@ -1,8 +1,7 @@
-@use "@/shared/styles/breakpoints";
+import { css } from "@linaria/core";
+import { styled } from "@linaria/react";
 
-$transition-params: all 200ms ease-out;
-
-.hero {
+export const Hero = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,9 +9,9 @@ $transition-params: all 200ms ease-out;
   padding: 0 10px;
   height: 100%;
   background-color: var(--color-white-smoke);
-}
+`;
 
-.title {
+export const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,19 +20,19 @@ $transition-params: all 200ms ease-out;
   width: 100%;
   user-select: none;
 
-  @include breakpoints.media-query(medium) {
+  @media screen and (width >= 760px) {
     flex-direction: row;
   }
-}
+`;
 
-.logo {
+export const logo = css`
   display: block;
   height: 66px;
   width: auto;
-  transition: $transition-params;
-}
+  transition: all 200ms ease-out;
+`;
 
-.name {
+export const name = css`
   display: block;
   margin: 0;
   font-size: 50px;
@@ -46,10 +45,11 @@ $transition-params: all 200ms ease-out;
     var(--color-flaming-hot-flamingoes)
   );
   background-clip: text;
-  transition: $transition-params;
+  transition: all 200ms ease-out;
+  cursor: default;
 
-  @include breakpoints.media-query(medium) {
+  @media screen and (width >= 760px) {
     line-height: 1.32;
     text-align: left;
   }
-}
+`;

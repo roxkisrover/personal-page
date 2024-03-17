@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 
-import styles from "./Grid.module.scss";
+import * as styles from "./styles";
 
 const GRID_CODE = "iddqd"; // Hello, Doom fans :D
 
@@ -31,5 +31,5 @@ export function Grid() {
     return null;
   }
 
-  return createPortal(<div id={"grid"} className={styles.grid}></div>, document.body);
+  return createPortal(<styles.Lines id={"grid"}></styles.Lines>, document.body);
 }

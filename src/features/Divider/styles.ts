@@ -1,35 +1,39 @@
-@use "@/shared/styles/breakpoints";
+import { css } from "@linaria/core";
 
-.divider {
-  padding: 0;
+export const btn = css`
+  padding: 0 16px;
   border: none;
   border-radius: 0;
-  color: inherit;
   font: inherit;
   text-align: inherit;
+  color: inherit;
   background: none;
   box-shadow: none;
   appearance: none;
   cursor: pointer;
-}
+  -webkit-tap-highlight-color: transparent;
 
-.times {
+  @media screen and (width >= 760px) {
+    padding: 0 6px;
+  }
+`;
+
+export const times = css`
   font-size: 36px;
   line-height: 1;
   color: var(--color-electric-ultramarine);
 
-  @include breakpoints.media-query(medium) {
+  @media screen and (width >= 760px) {
     font-size: 40px;
     line-height: 1.65;
   }
-}
+`;
 
-.emoji {
+export const emoji = css`
   font-size: 30px;
   line-height: 1.2;
-  -webkit-tap-highlight-color: transparent;
 
-  @include breakpoints.media-query(medium) {
+  @media screen and (width >= 760px) {
     line-height: 2.2;
   }
-}
+`;

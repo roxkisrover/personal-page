@@ -1,4 +1,6 @@
-.grid {
+import { styled } from "@linaria/react";
+
+export const Lines = styled.div`
   position: absolute;
   content: "";
   top: 0;
@@ -9,4 +11,4 @@
   background: linear-gradient(to bottom, rgb(32 160 255 / 35%) 1px, transparent 1px);
   background-size: 100% 26px;
   pointer-events: none;
-}
+`;

@@ -3,7 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 import logo from "@/shared/assets/images/x5-tech-logo.svg";
 import { Divider, Ticker } from "@/features";
 
-import styles from "./Hero.module.scss";
+import * as styles from "./styles";
 
 const START_DELAY = 150;
 
@@ -21,8 +21,8 @@ export function Hero() {
   });
 
   return (
-    <div className={styles.hero}>
-      <div className={styles.title}>
+    <styles.Hero>
+      <styles.Title>
         <animated.img
           className={styles.logo}
           src={logo}
@@ -34,8 +34,8 @@ export function Hero() {
         <animated.h1 className={styles.name} style={nameSprings}>
           Anton Nikolaenko
         </animated.h1>
-      </div>
+      </styles.Title>
       <Ticker />
-    </div>
+    </styles.Hero>
   );
 }
