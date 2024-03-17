@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import styles from "./Ticker.module.scss";
+import * as styles from "./styles";
 
 const TECHNOLOGIES = [
   "JavaScript",
@@ -10,32 +10,31 @@ const TECHNOLOGIES = [
   "Next.js",
   "Redux",
   "SWR",
+  "CSS Modules/Sass/Less",
+  "CSS-in-JS",
   "Webpack",
   "Vite",
   "Express.js",
-  "CSS/Sass/Less",
-  "CSS-in-JS",
+  "Jest",
   "REST",
   "Git",
-  "Jest",
   "ESLint",
   "Stylelint",
+  "Docker",
 ] as const;
 
 export function Ticker() {
   const list = useMemo(() => new Array(10).fill(TECHNOLOGIES).flat(), []);
 
   return (
-    <div className={styles.ticker}>
-      <div className={styles.wrapper}>
-        <ul className={styles.list}>
+    <styles.Container>
+      <styles.ListWrapper>
+        <styles.List>
           {list.map((item, index) => (
-            <li key={`${index}-${item}`} className={styles.item}>
-              {item}
-            </li>
+            <styles.ListItem key={`${index}-${item}`}>{item}</styles.ListItem>
           ))}
-        </ul>
-      </div>
-    </div>
+        </styles.List>
+      </styles.ListWrapper>
+    </styles.Container>
   );
 }

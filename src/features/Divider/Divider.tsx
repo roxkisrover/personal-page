@@ -1,7 +1,7 @@
 import { useState } from "react";
-import clsx from "clsx";
+import { cx } from "@linaria/core";
 
-import styles from "./Divider.module.scss";
+import * as styles from "./styles";
 
 const EMOJI_LIST = ["🚀", "⭐", "😋", "✨", "🤘", "🫶", "😎", "🤖", "📡", "😉", "🦉"] as const;
 
@@ -19,10 +19,7 @@ export function Divider() {
   };
 
   return (
-    <button
-      className={clsx(styles.divider, emoji ? styles.emoji : styles.times)}
-      onClick={handleClick}
-    >
+    <button className={cx(styles.btn, emoji ? styles.emoji : styles.times)} onClick={handleClick}>
       {emoji ?? <>&times;</>}
     </button>
   );
