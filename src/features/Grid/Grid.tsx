@@ -27,7 +27,7 @@ export function Grid() {
     };
   }, [keyLogger]);
 
-  if (GRID_CODES.some((item) => code.includes(item))) {
+  if (!GRID_CODES.some((item) => code.includes(item))) {
     return null;
   }
 
