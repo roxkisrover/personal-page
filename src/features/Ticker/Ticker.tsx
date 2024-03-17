@@ -27,14 +27,14 @@ export function Ticker() {
   const list = useMemo(() => new Array(10).fill(TECHNOLOGIES).flat(), []);
 
   return (
-    <styles.Wrapper>
-      <styles.Container>
+    <styles.Container>
+      <styles.ListWrapper>
         <styles.List>
           {list.map((item, index) => (
             <styles.ListItem key={`${index}-${item}`}>{item}</styles.ListItem>
           ))}
         </styles.List>
-      </styles.Container>
-    </styles.Wrapper>
+      </styles.ListWrapper>
+    </styles.Container>
   );
 }

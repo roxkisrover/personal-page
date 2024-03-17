@@ -1,7 +1,6 @@
-import { css } from "@linaria/core";
 import { styled } from "@linaria/react";
 
-export const globals = css`
+export const Container = styled.div`
   :global() {
     :root {
       --color-electric-ultramarine: #3700ff;
@@ -11,12 +10,13 @@ export const globals = css`
       --color-white-smoke: #f5f5f5;
       --color-umbral-umber: rgb(80 0 0 / 50%);
 
-      font-family: "X5 Sans", Helvetica, Arial, sans-serif;
-      font-weight: 400;
+      font:
+        16px/1.6 "X5 Sans",
+        sans-serif;
+      font-weight: normal;
       font-style: normal;
       font-optical-sizing: auto;
       font-synthesis: none;
-      line-height: 1.6;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -50,10 +50,8 @@ export const globals = css`
       font-style: normal;
     }
   }
-`;
 
-export const Container = styled.div`
-  padding: 60px 20px;
+  padding: 3.25rem 1.25rem;
   height: 100%;
   background-color: var(--color-white);
 `;

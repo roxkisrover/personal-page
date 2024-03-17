@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 import * as styles from "./styles";
 
-const GRID_CODE = "iddqd"; // Hello, Doom fans :D
+const GRID_CODES = ["iddqd", "шввйв"]; // Hello, Doom fans :D
 
 export function Grid() {
   const [code, setCode] = useState("");
@@ -14,7 +14,7 @@ export function Grid() {
       return;
     }
 
-    if (e.key.match(/^[a-z]$/)) {
+    if (e.key.match(/^[a-zа-я]$/)) {
       setCode((prevState) => prevState.concat(e.key));
     }
   }, []);
@@ -27,7 +27,7 @@ export function Grid() {
     };
   }, [keyLogger]);
 
-  if (!code.includes(GRID_CODE)) {
+  if (GRID_CODES.some((item) => code.includes(item))) {
     return null;
   }
 

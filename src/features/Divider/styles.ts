@@ -1,7 +1,7 @@
 import { css } from "@linaria/core";
 
 export const btn = css`
-  padding: 0 16px;
+  padding: 0 18px;
   border: none;
   border-radius: 0;
   font: inherit;
@@ -20,7 +20,7 @@ export const btn = css`
 
 export const times = css`
   font-size: 36px;
-  line-height: 1;
+  line-height: 1.28;
   color: var(--color-electric-ultramarine);
 
   @media screen and (width >= 760px) {
@@ -31,7 +31,7 @@ export const times = css`
 
 export const emoji = css`
   font-size: 30px;
-  line-height: 1.2;
+  line-height: 1.536;
 
   @media screen and (width >= 760px) {
     line-height: 2.2;

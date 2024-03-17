@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 
-export const Wrapper = styled.div`
-  margin-top: 20px;
+export const Container = styled.div`
+  margin-top: 26px;
   width: 100%;
 
   @media screen and (width >= 550px) {
@@ -9,11 +9,11 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (width >= 760px) {
-    margin-top: 0;
+    margin-top: 18px;
   }
 `;
 
-export const Container = styled.div`
+export const ListWrapper = styled.div`
   position: relative;
   padding-left: 100%;
   max-width: 400px;

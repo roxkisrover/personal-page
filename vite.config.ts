@@ -10,7 +10,7 @@ export default defineConfig({
       babelOptions: {
         presets: ["@babel/preset-typescript", "@babel/preset-react"],
       },
-      classNameSlug: (hash, title, args) => `${args.dir}-${title}-${hash}`.toLowerCase(),
+      classNameSlug: (hash, title, args) => `${args.dir}-${title}-${hash}`,
     }),
     react(),
   ],
