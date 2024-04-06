@@ -1,5 +1,3 @@
-import { useMemo } from "react";
-
 import * as styles from "./styles";
 
 const TECHNOLOGIES = [
