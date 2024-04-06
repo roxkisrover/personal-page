@@ -3,7 +3,7 @@ import { cx } from "@linaria/core";
 
 import * as styles from "./styles";
 
-const EMOJI_LIST = ["🚀", "⭐", "😋", "✨", "🤘", "🫶", "😎", "🤖", "📡", "😉", "🦉"] as const;
+const EMOJI_LIST = ["🚀", "⭐", "😋", "🤘", "👍", "🫶", "😎", "🤖", "📡", "😉", "🦉"] as const;
 
 type TEmojiList = (typeof EMOJI_LIST)[number];
 
