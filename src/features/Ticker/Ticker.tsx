@@ -24,14 +24,14 @@ const TECHNOLOGIES = [
 ] as const;
 
 export function Ticker() {
-  const list = useMemo(() => new Array(10).fill(TECHNOLOGIES).flat(), []);
+  const list = useMemo(() => Array(10).fill(TECHNOLOGIES).flat(), []);
 
   return (
     <styles.Container>
       <styles.ListWrapper>
         <styles.List>
-          {list.map((item, index) => (
-            <styles.ListItem key={`${index}-${item}`}>{item}</styles.ListItem>
+          {list.map((tech, index) => (
+            <styles.ListItem key={`${index}-${tech}`}>{tech}</styles.ListItem>
           ))}
         </styles.List>
       </styles.ListWrapper>

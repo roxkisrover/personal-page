@@ -3,33 +3,33 @@ import { createPortal } from "react-dom";
 
 import * as styles from "./styles";
 
-const GRID_CODES = ["iddqd", "шввйв"]; // Hello, Doom fans :D
+const GRID_CODES = ["iddqd", "шввйв"] as const; // Hello, Doom fans :D
 
 export function Grid() {
-  const [code, setCode] = useState("");
+  const [inputCode, setInputCode] = useState("");
 
-  const keyLogger = useCallback((e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      setCode("");
+  const handleKeyDown = useCallback((event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      setInputCode("");
       return;
     }
 
-    if (e.key.match(/^[a-zа-я]$/)) {
-      setCode((prevState) => prevState.concat(e.key));
+    if (event.key.match(/^[a-zа-я]$/)) {
+      setInputCode((prevState) => prevState + event.key);
     }
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", keyLogger);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.removeEventListener("keydown", keyLogger);
+      document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [keyLogger]);
+  }, [handleKeyDown]);
 
-  if (!GRID_CODES.some((item) => code.includes(item))) {
+  if (!GRID_CODES.some((code) => inputCode.includes(code))) {
     return null;
   }
 
-  return createPortal(<styles.Lines id={"grid"}></styles.Lines>, document.body);
+  return createPortal(<styles.Lines id={"grid"} />, document.body);
 }

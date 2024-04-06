@@ -8,19 +8,24 @@ const EMOJI_LIST = ["🚀", "⭐", "😋", "✨", "🤘", "🫶", "😎", "🤖"
 type TEmojiList = (typeof EMOJI_LIST)[number];
 
 export function Divider() {
-  const [emoji, setEmoji] = useState<TEmojiList | null>(null);
+  const [currentEmoji, setCurrentEmoji] = useState<TEmojiList | null>(null);
 
   const handleClick = () => {
-    const nextList = emoji ? EMOJI_LIST.filter((item) => item !== emoji) : EMOJI_LIST;
-    const nextIndex = Math.floor(Math.random() * nextList.length);
-    const nextEmoji = nextList[nextIndex];
+    const availableEmojis = currentEmoji
+      ? EMOJI_LIST.filter((emoji) => emoji !== currentEmoji)
+      : EMOJI_LIST;
+    const randomIndex = Math.floor(Math.random() * availableEmojis.length);
+    const nextEmoji = availableEmojis[randomIndex];
 
-    setEmoji(nextEmoji);
+    setCurrentEmoji(nextEmoji);
   };
 
   return (
-    <button className={cx(styles.btn, emoji ? styles.emoji : styles.times)} onClick={handleClick}>
-      {emoji ?? <>&times;</>}
+    <button
+      className={cx(styles.btn, currentEmoji ? styles.emoji : styles.times)}
+      onClick={handleClick}
+    >
+      {currentEmoji ?? <>&times;</>}
     </button>
   );
 }
