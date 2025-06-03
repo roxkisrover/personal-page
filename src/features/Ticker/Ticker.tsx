@@ -22,7 +22,7 @@ const TECHNOLOGIES = [
   "Docker",
 ] as const;
 
-export function Ticker() {
+export const Ticker = () => {
   return (
     <styles.Container>
       <styles.ListWrapper>
@@ -34,4 +34,4 @@ export function Ticker() {
       </styles.ListWrapper>
     </styles.Container>
   );
-}
+};

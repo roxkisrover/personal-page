@@ -39,11 +39,7 @@ export const name = css`
   line-height: 1;
   text-align: center;
   color: transparent;
-  background-image: linear-gradient(
-    90deg,
-    var(--color-electric-ultramarine),
-    var(--color-flaming-hot-flamingoes)
-  );
+  background-image: linear-gradient(90deg, var(--color-electric-ultramarine), var(--color-flaming-hot-flamingoes));
   background-clip: text;
   transition: all 200ms ease-out;
   cursor: default;

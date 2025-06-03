@@ -1,13 +1,13 @@
-import { useSpring, animated } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
-import logo from "@/shared/assets/images/x5-tech-logo.svg";
 import { Divider, Ticker } from "@/features";
+import logo from "@/shared/assets/images/x5-tech-logo.svg";
 
 import * as styles from "./styles";
 
 const START_DELAY = 150;
 
-export function Hero() {
+export const Hero = () => {
   const logoSprings = useSpring({
     from: { y: -100, opacity: 0 },
     to: { y: -15, opacity: 1 },
@@ -23,13 +23,7 @@ export function Hero() {
   return (
     <styles.Hero>
       <styles.Title>
-        <animated.img
-          className={styles.logo}
-          src={logo}
-          alt={"X5 Tech"}
-          draggable={false}
-          style={logoSprings}
-        />
+        <animated.img className={styles.logo} src={logo} alt={"X5 Tech"} draggable={false} style={logoSprings} />
         <Divider />
         <animated.h1 className={styles.name} style={nameSprings}>
           Anton Nikolaenko
@@ -38,4 +32,4 @@ export function Hero() {
       <Ticker />
     </styles.Hero>
   );
-}
+};

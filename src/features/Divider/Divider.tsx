@@ -7,13 +7,12 @@ const EMOJI_LIST = ["🚀", "⭐", "😋", "🤘", "👍", "🫶", "😎", "🤖
 
 type TEmojiList = (typeof EMOJI_LIST)[number];
 
-export function Divider() {
+export const Divider = () => {
   const [currentEmoji, setCurrentEmoji] = useState<TEmojiList | null>(null);
 
   const handleClick = () => {
-    const availableEmojis = currentEmoji
-      ? EMOJI_LIST.filter((emoji) => emoji !== currentEmoji)
-      : EMOJI_LIST;
+    const availableEmojis = currentEmoji ? EMOJI_LIST.filter((emoji) => emoji !== currentEmoji) : EMOJI_LIST;
+    /* eslint-disable-next-line sonarjs/pseudo-random */
     const randomIndex = Math.floor(Math.random() * availableEmojis.length);
     const nextEmoji = availableEmojis[randomIndex];
 
@@ -21,11 +20,8 @@ export function Divider() {
   };
 
   return (
-    <button
-      className={cx(styles.btn, currentEmoji ? styles.emoji : styles.times)}
-      onClick={handleClick}
-    >
+    <button className={cx(styles.btn, currentEmoji ? styles.emoji : styles.times)} onClick={handleClick}>
       {currentEmoji ?? <>&times;</>}
     </button>
   );
-}
+};

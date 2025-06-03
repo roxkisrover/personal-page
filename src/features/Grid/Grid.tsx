@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import * as styles from "./styles";
 
 const GRID_CODES = ["iddqd", "шввйв"] as const; // Hello, Doom fans :D
 
-export function Grid() {
+export const Grid = () => {
   const [inputCode, setInputCode] = useState("");
 
   const handleKeyDown = useCallback((event: KeyboardEvent) => {
@@ -32,4 +32,4 @@ export function Grid() {
   }
 
   return createPortal(<styles.Lines id={"grid"} />, document.body);
-}
+};
