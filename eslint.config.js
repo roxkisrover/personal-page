@@ -56,6 +56,8 @@ export default tseslint.config(
       "@typescript-eslint/max-params": ["error", { max: 4 }],
       "@typescript-eslint/no-unused-vars": ["error", { ignoreRestSiblings: true, argsIgnorePattern: "^_" }],
       "@typescript-eslint/no-invalid-void-type": "off",
+      "import-x/first": "warn",
+      "import-x/newline-after-import": "warn",
       "import-x/consistent-type-specifier-style": ["warn", "prefer-inline"],
       "import-x/no-duplicates": ["error", { "prefer-inline": true }],
       "import-x/no-named-as-default-member": "off",
@@ -65,6 +67,7 @@ export default tseslint.config(
       "react/self-closing-comp": "error",
       "react/jsx-boolean-value": ["warn", "never"],
       "react-hooks/exhaustive-deps": "off",
+      "react/jsx-no-leaked-render": "error",
       "react/function-component-definition": [
         "error",
         {
@@ -76,19 +79,16 @@ export default tseslint.config(
         "warn",
         {
           groups: [
-            ["^node:"],
-            ["^react", "^@?\\w"],
-            ["^\\u0000"],
-            ["^@\\/\\w+"],
-            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+            ["^node:"], // Node.js built-ins
+            ["^react", "^@?\\w"], // React and external packages
+            ["^\\u0000"], // Side effect imports
+            ["^@\\/\\w+"], // Internal packages with @/
+            ["^\\.\\.(?!/?$)", "^\\.\\./?$"], // Parent imports
+            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"], // Relative imports
           ],
         },
       ],
       "simple-import-sort/exports": "warn",
-      "import-x/first": "warn",
-      "import-x/newline-after-import": "warn",
-      "import-x/no-duplicates": "warn",
       "prettier/prettier": [
         "warn",
         {

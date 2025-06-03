@@ -1,7 +1,5 @@
 import { styled } from "@linaria/react";
 
-const LIST_GAP = "1rem";
-
 export const Container = styled.div`
   margin-top: 26px;
   width: 100%;
@@ -18,7 +16,7 @@ export const Container = styled.div`
 export const ListWrapper = styled.div`
   position: relative;
   display: flex;
-  gap: ${LIST_GAP};
+  gap: 1rem;
   max-width: 400px;
   width: 100%;
   border-radius: 8px;
@@ -62,7 +60,7 @@ export const List = styled.ul`
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  gap: ${LIST_GAP};
+  gap: 1rem;
   margin: 0;
   padding: 0 0 0 100%;
   min-width: 100%;
