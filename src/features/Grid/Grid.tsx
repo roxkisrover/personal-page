@@ -1,33 +1,37 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import * as styles from "./styles";
 
 const GRID_CODES = ["iddqd", "шввйв"] as const; // Hello, Doom fans :D
+const MAX_CODE_LENGTH = Math.max(...GRID_CODES.map((code) => code.length));
 
 export const Grid = () => {
   const [inputCode, setInputCode] = useState("");
 
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    if (event.key === "Escape") {
-      setInputCode("");
-      return;
-    }
-
-    if (event.key.match(/^[a-zа-я]$/)) {
-      setInputCode((prevState) => prevState + event.key);
-    }
-  }, []);
-
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
+    const handler = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setInputCode("");
+        return;
+      }
+
+      if (event.key.match(/^[a-zа-я]$/)) {
+        setInputCode((prevState) => {
+          const newCode = prevState + event.key;
+          return newCode.length > MAX_CODE_LENGTH ? newCode.slice(-MAX_CODE_LENGTH) : newCode;
+        });
+      }
+    };
+
+    document.addEventListener("keydown", handler);
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keydown", handler);
     };
-  }, [handleKeyDown]);
+  }, []);
 
-  if (!GRID_CODES.some((code) => inputCode.includes(code))) {
+  if (!GRID_CODES.some((code) => inputCode.endsWith(code))) {
     return null;
   }
 

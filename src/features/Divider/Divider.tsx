@@ -12,7 +12,8 @@ export const Divider = () => {
 
   const handleClick = () => {
     const availableEmojis = currentEmoji ? EMOJI_LIST.filter((emoji) => emoji !== currentEmoji) : EMOJI_LIST;
-    /* eslint-disable-next-line sonarjs/pseudo-random */
+    // Math.random() is safe for UI interactions (not used for security/cryptography)
+    // eslint-disable-next-line sonarjs/pseudo-random
     const randomIndex = Math.floor(Math.random() * availableEmojis.length);
     const nextEmoji = availableEmojis[randomIndex];
 
